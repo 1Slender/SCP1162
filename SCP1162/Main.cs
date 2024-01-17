@@ -40,10 +40,10 @@ namespace SCP1162
             Vector3 vectorAdd = Vector3.zero;
             int eul = (int)door.Transform.eulerAngles.y;
 
-            if (eul == 0) vectorAdd = new Vector3(-0.5f, 1, 4);
-            else if (eul == 89) vectorAdd = new Vector3(4, 1, 0.5f);
-            else if (eul == 179) vectorAdd = new Vector3(0.5f, 1, -4);
-            else vectorAdd = new Vector3(-4, 1, -0.5f);
+            if (eul == 0) vectorAdd = new Vector3(-1, 1, 4);
+            else if (eul == 89) vectorAdd = new Vector3(4, 1, 1);
+            else if (eul == 179) vectorAdd = new Vector3(1, 1, -4);
+            else vectorAdd = new Vector3(-4, 1, -1);
 
             ObjectSpawner.SpawnSchematic("scp1162", position: door.Position + vectorAdd, rotation: door.Rotation);
         }
