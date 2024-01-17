@@ -13,7 +13,7 @@ namespace SCP1162
         public static Main Plugin { get; private set; }
         public override string Author { get; } = "ShoulHate";
         public override string Name { get; } = "SCP1162";
-        public override Version Version { get; } = new Version(1, 0, 0);
+        public override Version Version { get; } = new Version(1, 1, 0);
         public override Version RequiredExiledVersion { get; } = new Version(8, 7, 0);
 
         public override void OnEnabled()

@@ -1,4 +1,5 @@
 ﻿
+using Exiled.API.Features;
 using Exiled.API.Features.Attributes;
 using Exiled.API.Features.Spawn;
 using Exiled.CustomItems.API.Features;
@@ -30,17 +31,24 @@ namespace SCP1162
 
         protected override void OnPickingUp(PickingUpItemEventArgs ev)
         {
+            Log.Debug(ev.Player);
+            ev.IsAllowed = false;
+            Log.Debug(ev.IsAllowed);
+
             if (ev.Player.CurrentItem == null)
             {
+                Log.Debug(ev.Player.CurrentItem);
                 ev.Player.EnableEffect(Exiled.API.Enums.EffectType.SeveredHands);
             }
             else
             {
                 ev.Player.CurrentItem.Destroy();
+                Log.Debug("ev.Player.CurrentItem.Destroy");
                 ev.Player.AddItem((ItemType)random.Next(51));
+                Log.Debug("ev.Player.AddItem");
             }
+            Log.Debug("OK");
 
-            ev.IsAllowed = false;
             base.OnPickingUp(ev);
         }
     }
